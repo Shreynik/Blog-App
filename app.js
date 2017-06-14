@@ -4,7 +4,8 @@ var expressSanitizer=require("express-sanitizer");
 var app=express();
 var bodyParser=require("body-parser");
 var mongoose=require("mongoose");
-mongoose.connect("mongodb://localhost/restful");
+//mongoose.connect("mongodb://localhost/restful");
+mongoose.connect("mongodb://shreynik:shreynik@ds123312.mlab.com:23312/yelpcamp")
 
 var blogSchema=new mongoose.Schema({
 	title: String,
@@ -125,7 +126,11 @@ app.delete("/blogs/:id",function(req,res){
 });
 
 
-
-app.listen(3000,function(req,res){
+app.listen(process.env.PORT,process.env.IP,function(req,res){
 	console.log("server has started");
 });
+
+
+// app.listen(3000,function(req,res){
+// 	console.log("server has started");
+// });
