@@ -5,7 +5,7 @@ var app=express();
 var bodyParser=require("body-parser");
 var mongoose=require("mongoose");
 //mongoose.connect("mongodb://localhost/restful");
-mongoose.connect("mongodb://shreynik:shreynik@ds123312.mlab.com:23312/yelpcamp")
+mongoose.connect("mongodb://<dbusername>:<dbpassword>@ds123312.mlab.com:23312/<projectname>")
 
 var blogSchema=new mongoose.Schema({
 	title: String,
